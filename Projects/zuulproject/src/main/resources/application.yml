@@ -1,0 +1,24 @@
+server:
+  port: 9000
+
+#服务的名称
+spring:
+  application:
+    name: api-getway
+#  zipkin:
+#    base-url: http://127.0.0.1:9411
+#  sleuth:
+#    sampler:
+#      probability: 1.0  #加上链路追踪
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka
+zuul:
+  routes:
+    eurakaclient:
+      path: /getway/**
+  prefix: /nhfc99
+  sensitive-headers:
+#  ignored-services: eurekaproduct
